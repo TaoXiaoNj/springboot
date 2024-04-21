@@ -1,13 +1,17 @@
 package com.github.tao.springboot.db.jpa.simple_read;
 
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
-import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
-import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.context.ContextConfiguration;
 
 
-@DataJpaTest
-@EnableAutoConfiguration
-@AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
-class CarRepositoryServiceTest {
+@ContextConfiguration(classes = CarRepositoryService.class)
+class CarRepositoryServiceTest extends RepositoryTestBase {
+	@Autowired
+	private CarRepositoryService carRepositoryService;
 
+	@Test
+	void should_insert_work() {
+		carRepositoryService.getByPk(123L);
+	}
 }

@@ -1,15 +1,15 @@
 package com.github.tao.springboot.db.jpa.simple_read;
 
 import jakarta.persistence.*;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.ToString;
+import lombok.*;
 
 @Entity
 @Getter
 @Builder
 @ToString
 @Table(name = "car")
+@NoArgsConstructor
+@AllArgsConstructor
 public class CarEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
