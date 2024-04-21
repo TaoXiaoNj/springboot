@@ -12,7 +12,7 @@ import lombok.*;
 @AllArgsConstructor
 public class CarEntity {
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "pk")
 	private Long pk;
 
